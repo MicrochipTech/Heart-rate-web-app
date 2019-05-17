@@ -33,26 +33,36 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Temperature & Heart Rate Real-time Data',
+      text: 'Heart Rate & Temperature Real-time Data',
       fontSize: 36
     },
     scales: {
       yAxes: [{
         id: 'Temperature',
         type: 'linear',
+		ticks: {
+                max: 125,
+                min: 0,
+                stepSize: 20
+            }
         scaleLabel: {
           labelString: 'Temperature(C)',
           display: true
         },
-        position: 'left',
+        position: 'right',
       }, {
           id: 'Heart Rate',
           type: 'linear',
+		  ticks: {
+                max: 185,
+                min: 0,
+                stepSize: 20
+            }
           scaleLabel: {
             labelString: 'Heart Rate (PPM)',
             display: true
           },
-          position: 'right'
+          position: 'left'
         }]
     }
   }
