@@ -41,7 +41,7 @@ $(document).ready(function () {
         id: 'Temperature',
         type: 'linear',
 		ticks: {
-                max: 125,
+                max: 110,
                 min: 0,
                 stepSize: 20
             },
@@ -54,7 +54,7 @@ $(document).ready(function () {
           id: 'Heart Rate',
           type: 'linear',
 		  ticks: {
-                max: 185,
+                max: 220,
                 min: 0,
                 stepSize: 20
             },
