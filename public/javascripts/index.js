@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var timeData = [],
     temperatureData = [],
-    humidityData = [];
+    heartrateData = [];
   var data = {
     labels: timeData,
     datasets: [
@@ -18,14 +18,14 @@ $(document).ready(function () {
       },
       {
         fill: false,
-        label: 'Humidity',
-        yAxisID: 'Humidity',
+        label: 'Heart Rate',
+        yAxisID: 'Heart Rate',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: humidityData
+        data: heartrateData
       }
     ]
   }
@@ -33,7 +33,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Temperature & Humidity Real-time Data',
+      text: 'Temperature & Heart Rate Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -46,10 +46,10 @@ $(document).ready(function () {
         },
         position: 'left',
       }, {
-          id: 'Humidity',
+          id: 'Heart Rate',
           type: 'linear',
           scaleLabel: {
-            labelString: 'Humidity(%)',
+            labelString: 'Heart Rate (PPM)',
             display: true
           },
           position: 'right'
@@ -88,10 +88,10 @@ $(document).ready(function () {
       }
 
       if (obj.humidity) {
-        humidityData.push(obj.humidity);
+        heartrateData.push(obj.humidity);
       }
       if (humidityData.length > maxLen) {
-        humidityData.shift();
+        heartrateData.shift();
       }
 
       myLineChart.update();
