@@ -100,7 +100,7 @@ $(document).ready(function () {
       if (obj.humidity) {
         heartrateData.push(obj.humidity);
       }
-      if (humidityData.length > maxLen) {
+      if (heartrateData.length > maxLen) {
         heartrateData.shift();
       }
 
