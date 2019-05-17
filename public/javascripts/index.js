@@ -42,7 +42,7 @@ $(document).ready(function () {
         type: 'linear',
 		ticks: {
                 max: 120,
-                min: 0,
+                min: 40,
                 stepSize: 20
             },
         scaleLabel: {
@@ -54,7 +54,7 @@ $(document).ready(function () {
           id: 'Heart Rate',
           type: 'linear',
 		  ticks: {
-                max: 180,
+                max: 160,
                 min: 0,
                 stepSize: 20
             },
