@@ -44,7 +44,7 @@ $(document).ready(function () {
                 max: 125,
                 min: 0,
                 stepSize: 20
-            }
+            },
         scaleLabel: {
           labelString: 'Temperature(C)',
           display: true
@@ -57,7 +57,7 @@ $(document).ready(function () {
                 max: 185,
                 min: 0,
                 stepSize: 20
-            }
+            },
           scaleLabel: {
             labelString: 'Heart Rate (PPM)',
             display: true
