@@ -3,7 +3,7 @@ $(document).ready(function () {
     heartbeatData = [];
   var data = {
     labels: timeData,
-    datasets: [
+    datasets: 
       {
         fill: false,
         label: 'Heart Beats',
@@ -15,7 +15,7 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: heartbeatData
       }
-    ]
+    
   }
 
   var basicOption = {
@@ -25,7 +25,7 @@ $(document).ready(function () {
       fontSize: 36
     },
     scales: {
-      yAxes: [{
+      yAxes: {
         id: 'Beats',
         type: 'linear',
 		ticks: {
@@ -38,7 +38,7 @@ $(document).ready(function () {
           display: true
         },
         position: 'left',
-      }]
+      }
     }
   }
 
