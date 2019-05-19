@@ -9,8 +9,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res/*, next*/) {
-	if(res != "/beats")
-		res.redirect('/');
+	//if(res != "/beats")
+		//res.redirect('/');
 });
 
 const server = http.createServer(app);
