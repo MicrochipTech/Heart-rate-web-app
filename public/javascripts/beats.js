@@ -6,14 +6,25 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Beats',
-        yAxisID: 'Beats',
+        label: 'Temperature',
+        yAxisID: 'Temperature',
+        borderColor: "rgba(255, 204, 0, 1)",
+        pointBoarderColor: "rgba(255, 204, 0, 1)",
+        backgroundColor: "rgba(255, 204, 0, 0.4)",
+        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
+        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
+        data: temperatureData
+      },
+      {
+        fill: false,
+        label: 'Heart Rate',
+        yAxisID: 'Heart Rate',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: heartbeatData
+        data: heartrateData
       }
     ]
   }
