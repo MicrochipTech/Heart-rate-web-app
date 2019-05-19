@@ -41,8 +41,8 @@ $(document).ready(function () {
         id: 'Temperature',
         type: 'linear',
 		ticks: {
-                max: 120,
-                min: 40,
+                max: 50,
+                min: 10,
                 stepSize: 20
             },
         scaleLabel: {
