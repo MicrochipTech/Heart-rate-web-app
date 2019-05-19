@@ -41,7 +41,7 @@ $(document).ready(function () {
     
 
       // only keep no more than 50 points in the line chart
-      const maxLen = 200;
+      const maxLen = 20000;
 
       if (obj.beats) {
 		for (property in obj.beats)  
