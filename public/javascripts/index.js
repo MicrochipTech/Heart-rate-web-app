@@ -97,8 +97,8 @@ $(document).ready(function () {
         temperatureData.shift();
       }
 
-      if (obj.humidity) {
-        heartrateData.push(obj.humidity);
+      if (obj.heartRate) {
+        heartrateData.push(obj.heartRate);
       }
       if (heartrateData.length > maxLen) {
         heartrateData.shift();
