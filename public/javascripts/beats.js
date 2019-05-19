@@ -1,19 +1,31 @@
 $(document).ready(function () {
   var timeData = [],
-    heartbeatData = [];
+    temperatureData = [],
+    heartrateData = [];
   var data = {
     labels: timeData,
     datasets: [
       {
         fill: false,
-        label: 'Beats',
-        yAxisID: 'Beats',
+        label: 'Temperature',
+        yAxisID: 'Temperature',
+        borderColor: "rgba(255, 204, 0, 1)",
+        pointBoarderColor: "rgba(255, 204, 0, 1)",
+        backgroundColor: "rgba(255, 204, 0, 0.4)",
+        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
+        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
+        data: temperatureData
+      },
+      {
+        fill: false,
+        label: 'Heart Rate',
+        yAxisID: 'Heart Rate',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: heartbeatData
+        data: heartrateData
       }
     ]
   }
@@ -21,11 +33,24 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Heart beats Real-time Data',
+      text: 'Heart Rate & Temperature Real-time Data',
       fontSize: 36
     },
     scales: {
       yAxes: [{
+        id: 'Temperature',
+        type: 'linear',
+		ticks: {
+                max: 120,
+                min: 40,
+                stepSize: 20
+            },
+        scaleLabel: {
+          labelString: 'Temperature(C)',
+          display: true
+        },
+        position: 'right',
+      }, {
           id: 'Heart Rate',
           type: 'linear',
 		  ticks: {
@@ -59,18 +84,24 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      
+      if(!obj.time || !obj.temperature) {
+        return;
+      }
       timeData.push(obj.time);
-
+      temperatureData.push(obj.temperature);
       // only keep no more than 50 points in the line chart
-      const maxLen = 20;
+      const maxLen = 50;
       var len = timeData.length;
+      if (len > maxLen) {
+        timeData.shift();
+        temperatureData.shift();
+      }
 
       if (obj.humidity) {
-        heartbeatData.push(obj.humidity);
+        heartrateData.push(obj.humidity);
       }
-      if (heartbeatData.length > maxLen) {
-        heartbeatData.shift();
+      if (heartrateData.length > maxLen) {
+        heartrateData.shift();
       }
 
       myLineChart.update();
