@@ -35,6 +35,7 @@ $(document).ready(function () {
 
       if (obj.beats) {
 		for (property in obj.beats)  
+			console.log(obj.beats[property]);
 			heartbeatData.push(obj.beats[property]);
       }
       if (heartbeatData.length > maxLen) {
