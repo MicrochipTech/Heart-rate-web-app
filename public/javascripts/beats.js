@@ -22,24 +22,9 @@ $(document).ready(function () {
       display: true,
       text: 'Heart beats Real-time Data',
       fontSize: 36
-    },
-    scales: {
-      yAxes: {
-        id: 'Beats',
-        type: 'linear',
-		ticks: {
-                max: 120,
-                min: 40,
-                stepSize: 20
-            },
-        scaleLabel: {
-          labelString: 'Beats',
-          display: true
-        },
-        position: 'left'
-      }
     }
   }
+
 
   //Get the context of the canvas element we want to select
   var ctx = document.getElementById("myChart").getContext("2d");
