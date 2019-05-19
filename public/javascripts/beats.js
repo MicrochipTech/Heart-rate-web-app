@@ -4,7 +4,7 @@ $(document).ready(function () {
   var counter = 0; 
   
   var dataset= {
-    //labels: index,
+    labels: index,
     datasets: [{ 
         data: heartbeatData,
         label: "heart beats",
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
       if (obj.beats) {
 		for (property in obj.beats) {
-			//index.push(counter);
+			index.push(counter);
 			heartbeatData.push(obj.beats[property]);
 			counter = counter + 1;
 		}
