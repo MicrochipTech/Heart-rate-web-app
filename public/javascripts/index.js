@@ -87,10 +87,12 @@ $(document).ready(function () {
       if(!obj.time || !obj.temperature) {
         return;
       }
+	  console.log('time' + obj.time);
+	  console.log('temperature' + obj.temperature);
       timeData.push(obj.time);
       temperatureData.push(obj.temperature);
       // only keep no more than 50 points in the line chart
-      const maxLen = 50;
+      const maxLen = 30;
       var len = timeData.length;
       if (len > maxLen) {
         timeData.shift();
