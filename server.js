@@ -12,10 +12,8 @@ app.use(function (req, res/*, next*/) {
 	console.log('req.url %s', req.url);
 	if(req.url != "/beats")
 		res.redirect('/');
-});
-
-app.get('/beats', function(req, res) {
-    res.sendFile(path.join(__dirname + 'public/beats.html'));
+	else
+		res.sendFile(path.join(__dirname + 'public/beats.html'));
 });
 
 const server = http.createServer(app);
