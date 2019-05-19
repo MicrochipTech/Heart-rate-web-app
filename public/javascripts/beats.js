@@ -25,8 +25,8 @@ $(document).ready(function () {
         id: 'beats',
         type: 'linear',
 		ticks: {
-                max: 20,
-                min: -20,
+                max: 500,
+                min: -500,
                 stepSize: 4
             }
       }]
