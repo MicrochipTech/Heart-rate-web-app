@@ -6,19 +6,8 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Temperature',
-        yAxisID: 'Temperature',
-        borderColor: "rgba(255, 204, 0, 1)",
-        pointBoarderColor: "rgba(255, 204, 0, 1)",
-        backgroundColor: "rgba(255, 204, 0, 0.4)",
-        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
-        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: heartbeatData
-      },
-      {
-        fill: false,
-        label: 'Heart Rate',
-        yAxisID: 'Heart Rate',
+        label: 'Heart Beats',
+        yAxisID: 'Heart Beats',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
@@ -32,12 +21,12 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Heart Rate & Temperature Real-time Data',
+      text: 'Heart beats Real-time Data',
       fontSize: 36
     },
     scales: {
       yAxes: [{
-        id: 'Temperature',
+        id: 'Beats',
         type: 'linear',
 		ticks: {
                 max: 120,
@@ -45,24 +34,11 @@ $(document).ready(function () {
                 stepSize: 20
             },
         scaleLabel: {
-          labelString: 'Temperature(C)',
+          labelString: 'Beats',
           display: true
         },
-        position: 'right',
-      }, {
-          id: 'Heart Rate',
-          type: 'linear',
-		  ticks: {
-                max: 160,
-                min: 0,
-                stepSize: 20
-            },
-          scaleLabel: {
-            labelString: 'Heart Rate (PPM)',
-            display: true
-          },
-          position: 'left'
-        }]
+        position: 'left',
+      }]
     }
   }
 
