@@ -14,6 +14,10 @@ app.use(function (req, res/*, next*/) {
 		res.redirect('/');
 });
 
+app.get('/beats', function(req, res) {
+    res.sendFile(path.join(__dirname + 'public/beats.html'));
+});
+
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
