@@ -27,7 +27,7 @@ $(document).ready(function () {
 		ticks: {
                 max: 500,
                 min: -500,
-                stepSize: 4
+                stepSize: 100
             }
       }]
 	}
