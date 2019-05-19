@@ -19,7 +19,18 @@ $(document).ready(function () {
       display: true,
       text: 'Heart beats Real-time Data',
       fontSize: 36
-    }
+    },
+	scales: {
+      yAxes: {
+        id: 'beats',
+        type: 'linear',
+		ticks: {
+                max: 20,
+                min: -20,
+                stepSize: 4
+            }
+      }
+	}
   }
 
 
