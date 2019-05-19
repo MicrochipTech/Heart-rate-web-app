@@ -1,21 +1,7 @@
 $(document).ready(function () {
   var timeData = [],
     heartbeatData = [];
-  var data = {
-    labels: timeData,
-    datasets: 
-      {
-        fill: false,
-        label: 'Heart Beats',
-        yAxisID: 'Heart Beats',
-        borderColor: "rgba(24, 120, 240, 1)",
-        pointBoarderColor: "rgba(24, 120, 240, 1)",
-        backgroundColor: "rgba(24, 120, 240, 0.4)",
-        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
-        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: heartbeatData
-      }
-  }
+
 
   var basicOption = {
     title: {
@@ -31,7 +17,7 @@ $(document).ready(function () {
   var optionsNoAnimation = { animation: false }
   var myLineChart = new Chart(ctx, {
     type: 'line',
-    data: data,
+    data: heartbeatData,
     options: basicOption
   });
 
