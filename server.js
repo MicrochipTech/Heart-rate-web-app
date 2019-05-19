@@ -13,7 +13,7 @@ app.use(function (req, res/*, next*/) {
 	if(req.url != "/beats")
 		res.redirect('/');
 	else
-		res.sendFile(path.join(__dirname + 'public/beats.html'));
+		res.sendFile(path.join(__dirname + '/public/beats.html'));
 });
 
 const server = http.createServer(app);
