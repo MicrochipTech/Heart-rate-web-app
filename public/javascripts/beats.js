@@ -1,6 +1,5 @@
 $(document).ready(function () {
-  var timeData = [],
-    heartbeatData = [];
+  var heartbeatData = [];
 
 
   var basicOption = {
@@ -29,15 +28,14 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      
-      timeData.push(obj.time);
+    
 
       // only keep no more than 50 points in the line chart
-      const maxLen = 20;
-      var len = timeData.length;
+      const maxLen = 200;
 
-      if (obj.humidity) {
-        heartbeatData.push(obj.humidity);
+      if (obj.beats) {
+		for (property in obj.beats)  
+			heartbeatData.push(obj.beats[property]);
       }
       if (heartbeatData.length > maxLen) {
         heartbeatData.shift();
