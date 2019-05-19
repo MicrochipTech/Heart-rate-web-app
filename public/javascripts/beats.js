@@ -21,7 +21,7 @@ $(document).ready(function () {
       fontSize: 36
     },
 	scales: {
-      yAxes: {
+      yAxes: [{
         id: 'beats',
         type: 'linear',
 		ticks: {
@@ -29,7 +29,7 @@ $(document).ready(function () {
                 min: -20,
                 stepSize: 4
             }
-      }
+      }]
 	}
   }
 
