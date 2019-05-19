@@ -1,6 +1,16 @@
 $(document).ready(function () {
   var heartbeatData = [];
 
+  var dataset: {
+    //labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    datasets: [{ 
+        data: heartbeatData,
+        label: "heart beats",
+        borderColor: "#3e95cd",
+        fill: false
+      }
+    ]
+  }
 
   var basicOption = {
     title: {
@@ -16,7 +26,7 @@ $(document).ready(function () {
   var optionsNoAnimation = { animation: false }
   var myLineChart = new Chart(ctx, {
     type: 'line',
-    data: heartbeatData,
+    data: dataset,
     options: basicOption
   });
 
@@ -35,7 +45,6 @@ $(document).ready(function () {
 
       if (obj.beats) {
 		for (property in obj.beats)  
-			console.log(obj.beats[property]);
 			heartbeatData.push(obj.beats[property]);
       }
       if (heartbeatData.length > maxLen) {
