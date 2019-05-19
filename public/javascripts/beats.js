@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var heartbeatData = [];
 
-  var dataset: {
+  var dataset= {
     //labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
     datasets: [{ 
         data: heartbeatData,
