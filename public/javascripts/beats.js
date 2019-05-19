@@ -15,7 +15,6 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: heartbeatData
       }
-    
   }
 
   var basicOption = {
@@ -37,7 +36,7 @@ $(document).ready(function () {
           labelString: 'Beats',
           display: true
         },
-        position: 'left',
+        position: 'left'
       }
     }
   }
