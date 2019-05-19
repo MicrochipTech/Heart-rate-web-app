@@ -43,7 +43,7 @@ $(document).ready(function () {
 		ticks: {
                 max: 50,
                 min: 10,
-                stepSize: 20
+                stepSize: 10
             },
         scaleLabel: {
           labelString: 'Temperature(C)',
