@@ -148,7 +148,7 @@ $(document).ready(function () {
       }
 
 	// only keep no more than 50 points in the line chart
-      const beatmaxLen = 500;
+      const beatmaxLen = 1000;
 
       if (obj.beats) {
 		for (property in obj.beats) {
