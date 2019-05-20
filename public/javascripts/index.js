@@ -40,6 +40,7 @@ $(document).ready(function () {
         data: heartbeatData,
         label: "heart beats",
         borderColor: "#3e95cd",
+		borderWidth: 1,
         fill: false
       }
     ]
@@ -94,8 +95,8 @@ $(document).ready(function () {
         id: 'beats',
         type: 'linear',
 		ticks: {
-                max: 500,
-                min: -500,
+                max: 400,
+                min: -400,
                 stepSize: 100
             }
       }]
@@ -139,7 +140,7 @@ $(document).ready(function () {
         temperatureData.shift();
       }
 
-      if (obj.heartRate) {
+      if (obj.heartRate || (obj.heartRate == 0)) {
         heartrateData.push(obj.heartRate);
       }
       if (heartrateData.length > maxLen) {
@@ -162,7 +163,7 @@ $(document).ready(function () {
 
       myLineChart.update();
 	  
-      myLineChart.update();
+      myLineChart2.update();
     } catch (err) {
       console.error(err);
     }
