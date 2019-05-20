@@ -159,8 +159,10 @@ $(document).ready(function () {
       }
       if (heartbeatData.length > beatmaxLen) {
 		for (property in obj.beats) 
+		{
 			heartbeatData.shift();
 			index.shift();
+		}
       }
 
       myLineChart.update();
