@@ -43,8 +43,11 @@ $(document).ready(function () {
 		borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
-        pointHoverBackgroundColor: "rgba(24, 120, 240, 0)",
-        pointHoverBorderColor: "rgba(24, 120, 240, 0)",
+        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
+        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
+		//pointHoverBorderWidth: 0,
+		//pointHoverRadius: 0,
+		pointRadius: 0,
 		//borderWidth: 1,
         fill: false
       }
