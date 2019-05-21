@@ -39,16 +39,12 @@ $(document).ready(function () {
     datasets: [{ 
         data: heartbeatData,
         label: "heart beats",
-        //borderColor: "#3e95cd",
 		borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-		//pointHoverBorderWidth: 0,
-		//pointHoverRadius: 0,
 		pointRadius: 0,
-		//borderWidth: 1,
         fill: false
       }
     ]
@@ -103,8 +99,8 @@ $(document).ready(function () {
         id: 'beats',
         type: 'linear',
 		ticks: {
-                max: 400,
-                min: -400,
+                max: 500,
+                min: -500,
                 stepSize: 100
             }
       }]
