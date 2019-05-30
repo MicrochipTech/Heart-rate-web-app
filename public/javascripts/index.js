@@ -130,48 +130,50 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.temperature) {
+      if(!obj.time || !obj.temperature || !obj.id ) {
         return;
       }
-	  
-      timeData.push(obj.time);
-      temperatureData.push(obj.temperature);
-      // only keep no more than 50 points in the line chart
-      const maxLen = 30;
-      var len = timeData.length;
-      if (len > maxLen) {
-        timeData.shift();
-        temperatureData.shift();
-      }
+      if(obj.id == "1")
+      {
+        timeData.push(obj.time);
+        temperatureData.push(obj.temperature);
+        // only keep no more than 50 points in the line chart
+        const maxLen = 30;
+        var len = timeData.length;
+        if (len > maxLen) {
+          timeData.shift();
+          temperatureData.shift();
+        }
 
-      if (obj.heartRate || (obj.heartRate == 0)) {
-        heartrateData.push(obj.heartRate);
-      }
-      if (heartrateData.length > maxLen) {
-        heartrateData.shift();
-      }
+        if (obj.heartRate || (obj.heartRate == 0)) {
+          heartrateData.push(obj.heartRate);
+        }
+        if (heartrateData.length > maxLen) {
+          heartrateData.shift();
+        }
 
-	// only keep no more than 50 points in the line chart
-      const beatmaxLen = 1000;
+    // only keep no more than 50 points in the line chart
+        const beatmaxLen = 1000;
 
-      if (obj.beats) {
-		for (property in obj.beats) {
-			index.push(counter);
-			heartbeatData.push(obj.beats[property]);
-			counter = counter + 1;
-		}
-      }
-      if (heartbeatData.length > beatmaxLen) {
-		for (property in obj.beats) 
-		{
-			heartbeatData.shift();
-			index.shift();
-		}
-      }
+        if (obj.beats) {
+          for (property in obj.beats) {
+            index.push(counter);
+            heartbeatData.push(obj.beats[property]);
+            counter = counter + 1;
+          }
+        }
+        if (heartbeatData.length > beatmaxLen) {
+          for (property in obj.beats) 
+          {
+            heartbeatData.shift();
+            index.shift();
+          }
+        }
 
-      myLineChart.update();
-	  
-      myLineChart2.update();
+        myLineChart.update();
+      
+        myLineChart2.update();
+      }
     } catch (err) {
       console.error(err);
     }
